@@ -1,5 +1,9 @@
 <template>
-  <div>
-    <h1 class="font-sans text-red-500">Hello World</h1>
-  </div>
+  <NuxtLayout>
+    <NuxtPage/>
+  </NuxtLayout>
 </template>
+
+<style lang="sass">
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined")
+</style>
