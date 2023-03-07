@@ -15,23 +15,26 @@ const submit = () =>
 
     if(form.reportValidity())
     {
+        const password = inputValue("#registerForm", "password")
 
+        if(password.length <= 3) useNuxtApp().$toast.error("Password is too short!")
+        else if (password.length > 50) useNuxtApp().$toast.error("Password is too large!")
     }
 }
 </script>
 
 <template>
     <Modal name="register" :show="show" title="Register" @closeModal="$emit('closeModal')" closable>
-        <form method="POST" class="content flex flex-col" @submit.prevent="submit" ref="formRef">
+        <form id="registerForm" method="POST" class="content flex flex-col" @submit.prevent="submit" ref="formRef">
 
             <div class="flex mb-3">
-                <TkInput type="text" class="pr-1.5" placeholder="Firstname" size="medium" required/>
-                <TkInput type="text" class="pl-1.5" placeholder="Lastname" size="medium" required/>
+                <TkInput type="text" class="pr-1.5" placeholder="Firstname" size="medium" name="firstname" required/>
+                <TkInput type="text" class="pl-1.5" placeholder="Lastname" size="medium" name="lastname" required/>
             </div>
 
-            <TkInput type="text" placeholder="Email or phone number" size="medium" class="mb-3" required/>
+            <TkInput type="email" placeholder="Email" size="medium" class="mb-3" required/>
 
-            <TkInput type="password" placeholder="Password" size="medium" class="mb-3" required/>
+            <TkInput type="password" placeholder="Password" name="password" size="medium" class="mb-3" required/>
 
             <span class="text-sm pb-1 pl-0.5">Birthday</span>
 
