@@ -2,10 +2,14 @@
 
 definePageMeta({ layout: "auth" })
 useHead({ title: "TakiTaki - Login" })
+
+const registerModal = new ModalHandler()
 </script>
 
 <template>
     <div id="index" class="flex w-full justify-center">
+        <ModalRegister :show="registerModal.status.value" @closeModal="registerModal.hide"/>
+
         <form action="post" class="pl-3 pt-3 pr-3 pb-4 shadow-md rounded-md bg-white max-w-[400px] w-full text-center">
             <TkInput class="w-full mb-4" placeholder="Email or phone number"/>
 
@@ -17,7 +21,7 @@ useHead({ title: "TakiTaki - Login" })
 
             <hr class="mb-4">
 
-            <TkButton class="w-full mb-2 !bg-secondary">Create new account</TkButton>
+            <TkButton type="button" class="w-full mb-2 !bg-secondary" @click="registerModal.show">Create new account</TkButton>
         </form>
     </div>
 </template>
