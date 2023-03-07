@@ -17,7 +17,7 @@ const select = () => (inputEl.value! as HTMLInputElement).click()
 
         <div class="flex items-center px-4 py-3 justify-between rounded-md focus:!outline-primary border-2 w-full cursor-pointer hover:shadow-sm"
         :class="{ 'px-3 py-2': size === 'medium' }" @click="select">
-            <span class="text-[18px]" :class="{ 'text-[14.8px]': size === 'medium' }"><slot/></span>
+            <span class="text-[18px]" :class="{ 'text-[14.5px]': size === 'medium' }"><slot/></span>
             <input type="radio" :name="name" :value="value" :checked="selected" class="w-[15px]" ref="inputEl">
         </div>
     </div>

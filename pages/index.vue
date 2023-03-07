@@ -21,7 +21,7 @@ const registerModal = new ModalHandler()
 
             <hr class="mb-4">
 
-            <TkButton type="button" class="w-full mb-2 !bg-secondary" @click="registerModal.show">Create new account</TkButton>
+            <TkButton type="button" class="w-full !bg-secondary" @click="registerModal.show">Create new account</TkButton>
         </form>
     </div>
 </template>
